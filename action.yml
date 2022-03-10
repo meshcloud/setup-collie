@@ -8,10 +8,13 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: |
+    - name: Create local bin folder and add it to Path
+      shell: bash
+      run: |
         mkdir -p ~/.local/bin
         echo "~/.local/bin" >> $GITHUB_PATH
-    - name: download-unipipe-cli
+    - name: Download unipipe cli
+      shell: bash
       run: |
         if [ ${{ inputs.unipipe-version }} = 'latest' ]; then
           https://github.com/meshcloud/unipipe-service-broker/releases/latest/download/unipipe-cli-x86_64-unknown-linux-gnu -P ~/.local/bin
