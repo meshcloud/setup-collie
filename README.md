@@ -20,4 +20,5 @@ The action supports the following inputs:
 # Outputs
 This action does not configure any outputs.
 
+
 <p align="center"><b>Made with ❤️ by <a href="https://meshcloud.io/?ref=gh-collie">meshcloud</a></b></p>
