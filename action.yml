@@ -16,7 +16,7 @@ runs:
         if [ ${{ inputs.unipipe-version }} = 'latest' ]; then
           https://github.com/meshcloud/unipipe-service-broker/releases/latest/download/unipipe-cli-x86_64-unknown-linux-gnu -P ~/.local/bin
         else
-          wget --no-verbose https://github.com/meshcloud/unipipe-service-broker/releases/${{ inputs.unipipe-version }}/unipipe-x86_64-unknown-linux-gnu -P ~/.local/bin
+          wget --no-verbose https://github.com/meshcloud/unipipe-service-broker/releases/${{ inputs.unipipe-version }}/unipipe-cli-x86_64-unknown-linux-gnu -P ~/.local/bin
         fi
-        mv ~/.local/bin/unipipe-x86_64-unknown-linux-gnu ~/.local/bin/unipipe
+        mv ~/.local/bin/unipipe-cli-x86_64-unknown-linux-gnu ~/.local/bin/unipipe
         chmod +x ~/.local/bin/unipipe
