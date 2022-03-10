@@ -1,6 +1,6 @@
 # setup-unipipe
 
-The meshcloud/setup-unipipe action is a composite action that sets up unipipe cli in your GitHub Actions workflow.
+The `meshcloud/setup-unipipe` action is a composite action that sets up unipipe cli in your GitHub Actions workflow.
 
 # Usage
 
