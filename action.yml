@@ -1,8 +1,8 @@
-name: 'meshcloud - Setup unipipe'
-description: 'Sets up unipipe cli in your GitHub Actions workflow.'
+name: 'meshcloud - Setup collie'
+description: 'Sets up collie cli in your GitHub Actions workflow.'
 inputs:
-  unipipe-version:
-    description: 'The version of unipipe cli that this action will set up.'
+  collie-version:
+    description: 'The version of collie cli that this action will set up.'
     default: 'latest'
     required: false
 runs:
@@ -13,13 +13,14 @@ runs:
       run: |
         mkdir -p ~/.local/bin
         echo "~/.local/bin" >> $GITHUB_PATH
-    - name: Download unipipe cli
+    - name: Download collie cli
       shell: bash
       run: |
-        if [ ${{ inputs.unipipe-version }} = 'latest' ]; then
-          wget --no-verbose https://github.com/meshcloud/unipipe-service-broker/releases/latest/download/unipipe-cli-x86_64-unknown-linux-gnu -P ~/.local/bin
+        if [ ${{ inputs.collie-version }} = 'latest' ]; then
+          wget --no-verbose https://github.com/meshcloud/collie-cli/releases/latest/download/collie-x86_64-unknown-linux-gnu.tar.gz -P ~/.local/bin
         else
-          wget --no-verbose https://github.com/meshcloud/unipipe-service-broker/releases/${{ inputs.unipipe-version }}/unipipe-cli-x86_64-unknown-linux-gnu -P ~/.local/bin
+          wget --no-verbose https://github.com/meshcloud/collie-cli/releases/${{ inputs.collie-version }}/collie-x86_64-unknown-linux-gnu.tar.gz -P ~/.local/bin
         fi
-        mv ~/.local/bin/unipipe-cli-x86_64-unknown-linux-gnu ~/.local/bin/unipipe
-        chmod +x ~/.local/bin/unipipe
+        tar -zxf ~/.local/bin/collie-x86_64-unknown-linux-gnu.tar.gz
+        mv ~/.local/bin/collie-x86_64-unknown-linux-gnu ~/.local/bin/collie
+        chmod +x ~/.local/bin/collie
