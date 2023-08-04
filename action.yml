@@ -21,6 +21,6 @@ runs:
         else
           wget --no-verbose https://github.com/meshcloud/collie-cli/releases/${{ inputs.collie-version }}/collie-x86_64-unknown-linux-gnu.tar.gz -P ~/.local/bin
         fi
-        tar -zxf ~/.local/bin/collie-x86_64-unknown-linux-gnu.tar.gz
+        tar -zxf ~/.local/bin/collie-x86_64-unknown-linux-gnu.tar.gz -C ~/.local/bin
         mv ~/.local/bin/collie-x86_64-unknown-linux-gnu ~/.local/bin/collie
         chmod +x ~/.local/bin/collie
